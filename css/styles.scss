@@ -1,5 +1,6 @@
 @import "normalize.scss";
 
-h1 {
-  color: #abc;
+@mixin makeGrid {
+  display: grid;
+  grid-gap: 0;
 }
