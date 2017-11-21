@@ -28,9 +28,9 @@ body {
   grid-template-areas: "header" "wrapper" "nav" "footer";
 }
 
-.BLOCK {
-  border: solid #aaa;
-  height: 20em;
+.signature {
+  text-align: right;
+  color: rgba(204, 204, 204, .4);
 }
 
 header {
