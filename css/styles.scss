@@ -1,6 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import "normalize.scss";
-
+$orangeColor: #ef8354;
+$bluegreyColor: #4f5d75;
+$whiteColor: #fcfcfc;
+$greyColor: #bfc0c0;
+$darkblueColor: #2d3142;
 @mixin makeGrid {
   display: grid;
   grid-gap: 0;
+}
+
+body {
+  margin: 0 auto;
+  font-family: "Open Sans";
+  background-color: $darkblueColor;
+  color: $whiteColor;
+  @include makeGrid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "header" "wrapper" "nav";
+}
+// Navigation Mobile
+// Gamalt
+//.topnav input {
+//  display: none;
+//}
+
+.topnav {
+  input {
+    display: none;
+  }
+
+  input:checked ~ .topmenu {
+    position: fixed;
+    bottom: 2.1em;
+    transition: all 150ms ease;
+  }
+
+  input:checked + label {
+    border: 3px inset #999;
+    color: $orangeColor;
+  }
+
+  label {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: $orangeColor;
+    background-color: $bluegreyColor;
+    padding: 0.2em;
+    z-index: 999;
+
+    &:before {
+      font-size: 1.5em;
+      content: "☰";
+    }
+  }
+}
+
+.topmenu {
+  display: grid;
+  grid-template-columns: 1fr;
+  position: fixed;
+  bottom: -15em;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  list-style: none;
+  transition: all 0.5s ease;
+  background-color: $greyColor;
+  z-index: 99;
+
+  li {
+    border: 0;
+    padding: 0;
+    border-bottom: $greyColor;
+  }
+
+  a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.25em;
+    color: $whiteColor;
+  }
+}
+
+.active,
+.topmenu a:active,
+.topmenu a:hover {
+  color: darken($orangeColor, 5%) !important;
+  transition: all 0.5s ease;
+}
+
+.BLOCK {
+  border: solid #aaa;
+  height: 20em;
+}
+
+header {
+  grid-area: header;
+}
+
+.wrapper {
+  grid-area: wrapper;
+  margin-bottom: 3em;
+
+  .main {
+    margin: 1em;
+    padding: 0.3em;
+    background-color: lighten($darkblueColor, 5);
+    border-radius: 10px;
+    line-height: 1.2;
+
+    h1 {
+      font-size: 1.2em;
+      text-align: center;
+    }
+  }
+
+  .right {
+    margin: 1em;
+    padding: 0.3em;
+    background-color: lighten($darkblueColor, 5);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    line-height: 1.2;
+
+    li {
+      list-style: none;
+      border-bottom: 2px solid $orangeColor;
+      margin-right: 2em;
+      margin-bottom: 0.5em;
+    }
+  }
+}
+
+.current-site {
+  text-align: center;
+  margin: 1em;
+  background-color: lighten($darkblueColor, 5);
+  border-radius: 10px;
+
+  h3 {
+    display: inline-block;
+    padding: 0.1em;
+    border-bottom: 2px solid $orangeColor;
+  }
 }
