@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-@import "normalize.scss";
+@import "normalize.scss"; // Breytur
 $orangeColor: #ef8354;
 $bluegreyColor: #4f5d75;
 $whiteColor: #fcfcfc;
@@ -9,6 +9,14 @@ $darkblueColor: #2d3142;
   display: grid;
   grid-gap: 0;
 }
+@mixin makeBlock {
+  margin: 1em;
+  padding: 0.5em;
+  background-color: lighten($darkblueColor, 5);
+  border-radius: 10px;
+  line-height: 1.2;
+}
+// Layout
 
 body {
   margin: 0 auto;
@@ -17,15 +25,67 @@ body {
   color: $whiteColor;
   @include makeGrid;
   grid-template-columns: 1fr;
-  grid-template-areas: "header" "wrapper" "nav";
+  grid-template-areas: "header" "wrapper" "nav" "footer";
 }
-// Navigation Mobile
-// Gamalt
-//.topnav input {
-//  display: none;
-//}
+
+.BLOCK {
+  border: solid #aaa;
+  height: 20em;
+}
+
+header {
+  grid-area: header;
+}
+
+.wrapper {
+  grid-area: wrapper;
+  margin-bottom: 3em;
+
+  .main {
+    @include makeBlock;
+
+    h1 {
+      font-size: 1.2em;
+      text-align: center;
+    }
+  }
+
+  .right {
+    @include makeBlock;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    li {
+      list-style: none;
+      border-bottom: 2px solid $orangeColor;
+      margin-right: 2em;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  footer {
+    @include makeBlock;
+    grid-area: footer;
+  }
+}
+
+.current-site {
+  text-align: center;
+  margin: 1em;
+  background-color: lighten($darkblueColor, 5);
+  border-radius: 10px;
+
+  h3 {
+    display: inline-block;
+    padding: 0.1em;
+    border-bottom: 2px solid $orangeColor;
+  }
+}
+// Navigation
 
 .topnav {
+  grid-area: nav;
+
   input {
     display: none;
   }
@@ -94,60 +154,58 @@ body {
   color: darken($orangeColor, 5%) !important;
   transition: all 0.5s ease;
 }
-
-.BLOCK {
-  border: solid #aaa;
-  height: 20em;
-}
-
-header {
-  grid-area: header;
-}
-
-.wrapper {
-  grid-area: wrapper;
-  margin-bottom: 3em;
-
-  .main {
-    margin: 1em;
-    padding: 0.3em;
-    background-color: lighten($darkblueColor, 5);
-    border-radius: 10px;
-    line-height: 1.2;
-
-    h1 {
-      font-size: 1.2em;
-      text-align: center;
+/*------Viðmið 37.5(600px)-----*/
+@media screen and (min-width: 37.5em) {
+  .wrapper {
+    .right {
+      @include makeGrid;
+      grid-template-columns: 35% 65%;
     }
   }
 
-  .right {
-    margin: 1em;
-    padding: 0.3em;
-    background-color: lighten($darkblueColor, 5);
-    border-radius: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    line-height: 1.2;
-
-    li {
-      list-style: none;
-      border-bottom: 2px solid $orangeColor;
-      margin-right: 2em;
-      margin-bottom: 0.5em;
-    }
+  .current-site h3:before {
+    content: "Stage 1";
   }
 }
+/*------Viðmið 48(760px)-----*/
+@media screen and (min-width: 48em) {
+  body {
+    grid-template-areas: "header" "nav" "wrapper" "footer";
+  }
 
-.current-site {
-  text-align: center;
-  margin: 1em;
-  background-color: lighten($darkblueColor, 5);
-  border-radius: 10px;
+  .topnav {
+    input,
+    label {
+      display: none;
+    }
 
-  h3 {
-    display: inline-block;
-    padding: 0.1em;
-    border-bottom: 2px solid $orangeColor;
+    .topmenu {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      position: relative;
+      bottom: 0;
+      border-radius: 0 0 5px 5px;
+      transition: none;
+    }
+  }
+
+  .wrapper {
+    .right {
+      grid-template-columns: 25% 75%;
+    }
+  }
+
+  .current-site h3:before {
+    content: "Stage 2";
+  }
+}
+/*------Viðmið 60(960px)------*/
+@media screen and (min-width: 60em) {
+  body {
+    max-width: 60em;
+  }
+
+  .current-site h3:before {
+    content: "Stage 3";
   }
 }
