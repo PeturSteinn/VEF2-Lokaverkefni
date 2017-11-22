@@ -1,5 +1,7 @@
-*, *:before, *:after {
-	box-sizing: border-box;
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
 }
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import "normalize.scss"; // Breytur
@@ -103,8 +105,7 @@ header {
   input:checked ~ .topmenu {
     position: fixed;
     bottom: 2.1em;
-    transition: all .5s ease;
-
+    transition: all 0.5s ease;
   }
 
   input:checked + label {
