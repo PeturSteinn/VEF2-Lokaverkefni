@@ -20,6 +20,7 @@ $darkblueColor: #2d3142;
   line-height: 1.2;
 }
 // Layout
+
 body {
   margin: 0 auto;
   font-family: "Open Sans";
@@ -69,6 +70,12 @@ header {
   footer {
     @include makeBlock;
     grid-area: footer;
+    text-align: center;
+  }
+
+  .footer-content {
+    max-width: 37.5em;
+    margin: 0 auto;
   }
 }
 
