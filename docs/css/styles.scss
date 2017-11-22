@@ -165,6 +165,95 @@ header {
   color: darken($orangeColor, 5%) !important;
   transition: all 0.5s ease;
 }
+/*------from------*/
+form{
+	width: 100%;
+    @include makeGrid;
+    grid-template-columns: 100%;
+    grid-template-areas: "form" "form1" "form2" "form3" "form4" "form5" ;
+    
+}
+.form{
+    @include makeBlock;
+    grid-area: form;
+    width: 1
+    
+}
+.form1{
+    @include makeBlock;
+    grid-area: form1;
+    
+}
+.form2{
+    @include makeBlock;
+    grid-area: form2;
+    
+}
+.form3{
+    @include makeBlock;
+    grid-area: form3;
+    
+}
+.form4{
+    @include makeBlock;
+    grid-area: form4;
+    
+}
+.form5{
+    @include makeBlock;
+    grid-area: form5;
+    
+}
+fieldset{
+	display: flex;
+	flex-flow: column;
+}
+form input{
+	padding: .5em 1em;
+	margin-top: 5px;
+	margin-bottom: 20px;
+	width: 100%;
+	background-color: #c1c1c1;
+}
+.dag{
+	display: block;
+	margin-bottom: 1em;
+
+
+}
+.fjoldi{
+	background-color: #c1c1c1;
+
+}
+form input[type="date"]{
+	width: 11em;
+
+
+}
+form input[type="checkbox"],
+form input[type="radio"]{
+	padding: 0em;
+	width: 2em;
+}
+form textarea{
+	width: 100%; 
+	background-color: #c1c1c1; 
+	font-family: 'Cutive Mono', monospace;
+	font-size: 13px;
+	font-style: italic;
+}
+form input[type="submit"]{
+	width: 10em;
+	text-align: center;
+	background: #703c70;
+	color: white;
+
+}
+.senda{
+	
+	text-align: center;
+
+}
 /*------Viðmið 37.5(600px)-----*/
 @media screen and (min-width: 37.5em) {
   .wrapper {
@@ -184,7 +273,20 @@ header {
   body {
     grid-template-areas: "header" "nav" "wrapper" "footer";
   }
-
+  form{
+	width: 100%;
+    @include makeGrid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "form form1" "form2 form3" "form4 form5";
+    
+  }
+  .form{
+    @include makeBlock;
+    grid-area: form;
+    width: 1
+    
+  }
+    
   .wrapper {
     .right {
       grid-template-columns: 25% 75%;
@@ -196,6 +298,7 @@ header {
     label {
       display: none;
     }
+   
 
     .topmenu,
     input:checked ~ .topmenu {
@@ -207,6 +310,7 @@ header {
       transition: none;
     }
   }
+    
 
   .current-site h3:before {
     content: "Stage 2";
