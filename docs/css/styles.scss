@@ -1,3 +1,6 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+}
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import "normalize.scss"; // Breytur
 $orangeColor: #ef8354;
@@ -93,7 +96,8 @@ header {
   input:checked ~ .topmenu {
     position: fixed;
     bottom: 2.1em;
-    transition: all 150ms ease;
+    transition: all .5s ease;
+
   }
 
   input:checked + label {
