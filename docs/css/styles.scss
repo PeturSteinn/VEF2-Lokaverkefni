@@ -23,7 +23,7 @@ $darkblueColor: #2d3142;
 
 body {
   margin: 0 auto;
-  font-family: "Open Sans";
+  font-family: "Open Sans",Helvetica,Aril,sans-serif;
   background-color: $darkblueColor;
   color: $whiteColor;
   @include makeGrid;
