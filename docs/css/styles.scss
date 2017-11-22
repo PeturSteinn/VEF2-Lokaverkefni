@@ -17,7 +17,6 @@ $darkblueColor: #2d3142;
   line-height: 1.2;
 }
 // Layout
-
 body {
   margin: 0 auto;
   font-family: "Open Sans";
@@ -187,7 +186,8 @@ header {
       display: none;
     }
 
-    .topmenu {
+    .topmenu,
+    input:checked ~ .topmenu {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
       position: relative;
