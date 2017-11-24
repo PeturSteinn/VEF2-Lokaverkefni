@@ -207,6 +207,49 @@ header {
       }
     }
   }
+
+  .main-content-lid {
+    @include makeGrid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .team {
+      max-width: 200px;
+      @include makeBlock;
+      display: flex;
+      justify-content: center;
+      flex-flow: column;
+      padding: 0;
+
+      .logo {
+        height: 120px;
+        display: flex;
+        justify-content: center;
+
+        img {
+          width: 100px;
+          padding: 0.5em;
+        }
+      }
+
+      .players {
+        //background-color: red;
+        background-color: lighten($darkblueColor, 30%);
+        border-radius: 0 0 10px 10px;
+
+        ul {
+          display: inline;
+
+          li {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0.5em;
+            text-align: center;
+            border-bottom: 1px solid $orangeColor;
+          }
+        }
+      }
+    }
+  }
 }
 /* ---Navigation---*/
 .topnav {
@@ -330,6 +373,14 @@ header {
         }
       }
     }
+
+    .main-content-lid {
+      .team {
+        .players {
+          /* Stíla þetta seinna */
+        }
+      }
+    }
   }
   /* ---Navigation---*/
   .topnav {
@@ -357,6 +408,12 @@ header {
 @media screen and (min-width: 60em) {
   body {
     max-width: 60em;
+  }
+
+  .wrapper {
+    .main-content-lid {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
   }
 
   .current-site h3:before {
