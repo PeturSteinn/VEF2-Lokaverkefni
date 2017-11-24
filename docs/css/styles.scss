@@ -72,7 +72,7 @@ header {
     margin: 0 auto;
   }
   /* Forsíðu stílar */
-  .main-content-55-45 {
+  .main-content-65-35 {
     @include makeGrid;
     grid-template-columns: 1fr;
     grid-template-areas: "kynning" "right";
@@ -285,7 +285,6 @@ header {
   transition: all 0.5s ease-in-out;
 }
 /* Skráning
-
 */
 .signature {
   text-align: right;
@@ -306,8 +305,8 @@ header {
   }
 
   .wrapper {
-    .main-content-55-45 {
-      grid-template-columns: 55% 45%;
+    .main-content-65-35 {
+      grid-template-columns: 65% 35%;
       grid-template-areas: "kynning right";
 
       .right {
