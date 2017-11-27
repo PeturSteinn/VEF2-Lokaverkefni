@@ -3,8 +3,9 @@
 *:before {
   box-sizing: border-box;
 }
+/* ---Breytur---*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-@import "normalize.scss"; // Breytur
+@import "normalize.scss";
 $orangeColor: #ef8354;
 $bluegreyColor: #4f5d75;
 $whiteColor: #fcfcfc;
@@ -16,13 +17,12 @@ $darkblueColor: #2d3142;
 }
 @mixin makeBlock {
   margin: 1em;
-  padding: 0.5em;
+  padding: 1em;
   background-color: lighten($darkblueColor, 5);
   border-radius: 10px;
   line-height: 1.2;
 }
-// Layout
-
+/* ---Layout---*/
 body {
   margin: 0 auto;
   font-family: "Open Sans",Helvetica,Aril,sans-serif;
@@ -33,78 +33,32 @@ body {
   grid-template-areas: "header" "wrapper" "nav";
 }
 
-.signature {
-  text-align: right;
-  color: rgba(204, 204, 204, .3);
-  margin-bottom: -3.5em;
-}
-.signature {
-  text-align: right;
-  color: rgba(204, 204, 204, .3);
-  margin-bottom: -3.5em;
-}
-// Pictures
-
-.photo-gallery img {
-  max-width: 100%;
-  height: auto;
-  padding: 0.3em;
-}
-
 header {
   grid-area: header;
 }
 
 .wrapper {
   grid-area: wrapper;
-  margin-bottom: 3em;
-  @include makeGrid;
   grid-template-columns: 1fr;
-  grid-template-areas: "current" "main" "photos" "right" "footer";
+  grid-template-areas: "current" "main" "footer";
+  margin-bottom: 3em;
 
-  .main {
-    @include makeBlock;
-    grid-area: main;
+  .current-site {
+    text-align: center;
+    margin: 1em;
+    background-color: lighten($darkblueColor, 5);
+    border-radius: 10px;
+    grid-area: current;
 
-    h1 {
-      font-size: 1.2em;
-      text-align: center;
-    }
-
-    .photo-gallery {
-      display: grid;
-      grid-template-columns: auto auto;
+    h3 {
+      display: inline-block;
+      padding: 0.1em;
+      border-bottom: 2px solid $orangeColor;
     }
   }
-}
-.wrap{
+
   .main {
-    @include makeBlock;
     grid-area: main;
-
-    h1 {
-      font-size: 1.2em;
-      text-align: center;
-    }
-
-    .photo-gallery {
-      display: grid;
-      grid-template-columns: auto auto;
-    }    
-}
-
-  .right {
-    @include makeBlock;
-    display: grid;
-    grid-template-columns: 45% 55%;
-    grid-area: right;
-
-    li {
-      list-style: none;
-      border-bottom: 2px solid $orangeColor;
-      margin-right: 2em;
-      margin-bottom: 0.5em;
-    }
   }
 
   footer {
@@ -117,23 +71,181 @@ header {
     max-width: 37.5em;
     margin: 0 auto;
   }
-}
+  /* Forsíðu stílar */
+  .main-content-65-35 {
+    @include makeGrid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "kynning" "right";
 
-.current-site {
-  text-align: center;
-  margin: 1em;
-  background-color: lighten($darkblueColor, 5);
-  border-radius: 10px;
-  grid-area: current;
+    .main-kynning {
+      grid-area: kynning;
+      @include makeBlock;
 
-  h3 {
-    display: inline-block;
-    padding: 0.1em;
-    border-bottom: 2px solid $orangeColor;
+      .photo-gallery {
+        margin: 0;
+
+        img {
+          max-width: 100%;
+          height: auto;
+          padding: 0.3em;
+          border-bottom: 1px solid $orangeColor;
+        }
+      }
+    }
+
+    .right {
+      grid-area: right;
+      @include makeBlock;
+      @include makeGrid;
+      grid-template-columns: 45% 55%;
+
+      li {
+        list-style: none;
+        border-bottom: 2px solid $orangeColor;
+        margin-right: 2em;
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+  /* Bættu við stílum fyrir aðrar síður hér <wrapper><nyttsvaedi></nyttsvaedi></wrapper>*/
+  .main-form {
+    @include makeGrid;
+
+    .main-kynning {
+      @include makeBlock;
+    }
+
+    .lid {
+      @include makeBlock;
+      /*---Form---*/
+      form {
+        width: 100%;
+        @include makeGrid;
+        grid-template-columns: 100%;
+        grid-template-areas: "form" "form1" "form2" "form3" "form4" "form5";
+      }
+
+      .form {
+        @include makeBlock;
+        grid-area: form;
+        width: 1;
+      }
+
+      .form1 {
+        @include makeBlock;
+        grid-area: form1;
+      }
+
+      .form2 {
+        @include makeBlock;
+        grid-area: form2;
+      }
+
+      .form3 {
+        @include makeBlock;
+        grid-area: form3;
+      }
+
+      .form4 {
+        @include makeBlock;
+        grid-area: form4;
+      }
+
+      .form5 {
+        @include makeBlock;
+        grid-area: form5;
+      }
+
+      fieldset {
+        display: flex;
+        flex-flow: column;
+      }
+
+      form input {
+        padding: 0.5em 1em;
+        margin-top: 5px;
+        margin-bottom: 20px;
+        width: 100%;
+        background-color: #c1c1c1;
+      }
+
+      .dag {
+        display: block;
+        margin-bottom: 1em;
+      }
+
+      .fjoldi {
+        background-color: #c1c1c1;
+      }
+
+      form input[type="texti"] {
+        margin-right: 3em;
+      }
+      .aldur5{
+          margin-bottom: .7em;
+      }     
+
+      form textarea {
+        width: 100%;
+        background-color: #c1c1c1;
+        font-family: 'Cutive Mono', monospace;
+        font-size: 13px;
+        font-style: italic;
+      }
+
+      form input[type="submit"] {
+        margin-top: 2em;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+      }
+    }
+  }
+
+  .main-content-lid {
+    @include makeGrid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .team {
+      max-width: 200px;
+      @include makeBlock;
+      display: flex;
+      justify-content: center;
+      flex-flow: column;
+      padding: 0;
+
+      .logo {
+        height: 120px;
+        display: flex;
+        justify-content: center;
+
+        img {
+          width: 100px;
+          padding: 0.5em;
+        }
+      }
+
+      .players {
+        //background-color: red;
+        background-color: lighten($darkblueColor, 30%);
+        border-radius: 0 0 10px 10px;
+
+        ul {
+          display: inline;
+
+          li {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0.5em;
+            text-align: center;
+            border-bottom: 1px solid $orangeColor;
+          }
+        }
+      }
+    }
   }
 }
-// Navigation
-
+/* ---Navigation---*/
 .topnav {
   grid-area: nav;
 
@@ -177,6 +289,7 @@ header {
   bottom: -15em;
   padding: 0;
   margin: 0;
+  padding-bottom: 3px;
   width: 100%;
   list-style: none;
   transition: all 0.5s ease;
@@ -187,6 +300,7 @@ header {
     border: 0;
     padding: 0;
     border-bottom: $greyColor;
+    margin: 0 auto;
   }
 
   a {
@@ -273,33 +387,20 @@ form input[type="submit"]{
 
 }
 .senda{
-    bottom: 0;
-	
-
+  bottom: 0;
+  border-bottom: 1px solid $orangeColor;
+  margin-bottom: -1px;
+  transition: all 0.5s ease-in-out;
+}
+/* Skráning
+*/
+.signature {
+  text-align: right;
+  color: rgba(204, 204, 204, .3);
+  margin-bottom: -3.5em;
 }
 /*------Viðmið 37.5(600px)-----*/
 @media screen and (min-width: 37.5em) {
-  //.wrapper {
-  //  .right {
-  //    @include makeGrid;
-  //    grid-template-columns: 35% 65%;
-  //  }
-  //}
-  /*
-  .wrapper {
-    grid-template-columns: 65% 35%;
-    grid-template-areas: "current current" "main right" "footer footer";
-
-    .main {
-      h1 {
-        text-align: left;
-      }
-    }
-
-    .right {
-      grid-template-columns: 1fr;
-    }
-  }*/
   .current-site h3:before {
     content: "Stage 1";
   }
@@ -310,52 +411,59 @@ form input[type="submit"]{
   body {
     grid-template-areas: "header" "nav" "wrapper";
   }
-  form{
-	width: 100%;
-    @include makeGrid;
-    grid-template-columns: 50% 50%;
-    grid-template-areas: "form form1" "form2 form3" "form4 form5";
-    
-  }
-  .form{
-    @include makeBlock;
-    grid-area: form;
-    width: 1
-    
-  }
-  .wrapper {
-    grid-template-columns: 65% 35%;
-    grid-template-areas: "current current" "main right" "footer footer";
 
-    .main {
-      h1 {
-        text-align: left;
+  .wrapper {
+    .main-content-65-35 {
+      grid-template-columns: 65% 35%;
+      grid-template-areas: "kynning right";
+
+      .right {
+        grid-template-columns: 1fr;
       }
     }
 
-    .right {
-      grid-template-columns: 1fr;
+    .main-form {
+      .lid {
+        /*---Form---*/
+        form {
+          width: 100%;
+          grid-template-columns: 50% 50%;
+          grid-template-areas: "form1 form2""form3 form4"" form form5 " ;
+        }
+
+        .form {
+          @include makeBlock;
+          grid-area: form;
+          width: 1;
+        }
+        }
+    }
+
+    .main-content-lid {
+      .team {
+        .players {
+          /* Stíla þetta seinna */
+        }
+      }
     }
   }
-  // Navigation
+  /* ---Navigation---*/
   .topnav {
     input,
     label {
       display: none;
     }
-   
 
     .topmenu,
     input:checked ~ .topmenu {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
       position: relative;
-      bottom: 0;
+      bottom: 0.18em;
       border-radius: 0 0 5px 5px;
       transition: none;
     }
   }
-    
 
   .current-site h3:before {
     content: "Stage 2";
@@ -365,6 +473,12 @@ form input[type="submit"]{
 @media screen and (min-width: 60em) {
   body {
     max-width: 60em;
+  }
+
+  .wrapper {
+    .main-content-lid {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
   }
 
   .current-site h3:before {

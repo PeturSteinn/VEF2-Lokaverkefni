@@ -1,0 +1,23 @@
+<svg width="580" height="400" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <rect id="svg_1" height="128" width="329" y="68.6" x="125.5" stroke-width="1.5" stroke="#000" fill="#c0c0c0"/>
+  <rect id="svg_3" height="28" width="164" y="40.6" x="208" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#ff0000"/>
+  <rect id="svg_4" height="56" width="128" y="68.721376" x="226.409821" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#ffd700"/>
+  <rect stroke="#000" id="svg_5" height="112" width="330.000005" y="193.6" x="124.999991" stroke-opacity="null" stroke-width="1.5" fill="#cd7f32"/>
+  <text stroke="#000" transform="matrix(1,0,0,1.03789222240448,0,-4.8123122453689575) " xml:space="preserve" text-anchor="start" font-family="Euphoria, sans-serif" font-size="24" id="svg_8" y="165.942841" x="259.289063" fill-opacity="null" stroke-opacity="null" stroke-width="0" fill="#000000">Silver</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Euphoria, sans-serif" font-size="24" id="svg_9" y="106.6" x="264.65625" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">Gold</text>
+  <text transform="matrix(1,0,0,1,0,0) " stroke="#000" xml:space="preserve" text-anchor="start" font-family="Euphoria, sans-serif" font-size="24" id="svg_10" y="61.6" x="260.5" fill-opacity="null" stroke-opacity="null" stroke-width="0" fill="#000000">Stage</text>
+  <path id="svg_14" d="m9.5,384.6l-111.5,-4.6" opacity="0.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#fff"/>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_16" y="250.6" x="251.984375" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">Bronze</text>
+ </g>
+</svg>
