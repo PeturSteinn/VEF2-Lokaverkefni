@@ -22,6 +22,29 @@ $darkblueColor: #2d3142;
   border-radius: 10px;
   line-height: 1.2;
 }
+@mixin midar{
+    padding: 0 2em;
+    border: 2px solid $darkblueColor;
+    
+}
+@mixin midarlinkar{
+    background-color: $darkblueColor;
+    margin-bottom:2em;
+    a{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display:block;
+        text-decoration:none; 
+        padding: .3em;
+        text-align: center;
+        color: white;
+        &:hover{
+            color: lighten($darkblueColor,5);
+        }
+    }
+}
+
 /* ---Layout---*/
 body {
   margin: 0 auto;
@@ -337,7 +360,63 @@ header {
         }
       }
     }
-  }
+  } 
+  .main-content-midasala{
+    @include makeGrid; 
+    @include makeBlock;
+    grid-template-columns: 100%;
+    grid-template-areas: "bronze" "silver""gold"" svid";  
+    .bronze{
+        grid-area: bronze;
+        h1{
+            color:#cd7f32;
+        }
+        .midar{
+            @include midar;
+        }
+        .kaupamida{
+            @include midarlinkar;
+        }
+    }
+    .silver{
+        grid-area: silver;
+        h1{
+            color:#c0c0c0;
+        }
+        .midar{
+            @include midar;
+        }
+        .kaupamida{
+            @include midarlinkar;
+           
+        }
+    }
+    .gold{
+        grid-area: gold;
+        h1{
+            color:#ffd700;
+        }
+        .midar{
+            @include midar;
+        }
+        .kaupamida{
+            @include midarlinkar;
+           
+    }
+        
+        
+               
+    }
+    .svid{
+        
+        img{
+            align-items: center;
+            width: 100%;
+            grid-area: svid;
+        }
+    }  
+  
+}
 }
 /* ---Navigation---*/
 .topnav {
@@ -519,19 +598,26 @@ form input[type="submit"]{
     .main-form {
       .lid {
         /*---Form---*/
-        form {
-          width: 100%;
-          grid-template-columns: 50% 50%;
-          grid-template-areas: "form1 form2""form3 form4""form form5 " ;
-        }
+            form {
+              width: 100%;
+              grid-template-columns: 50% 50%;
+              grid-template-areas: "form1 form2""form3 form4""form form5 " ;
+            }
 
-        .form {
-          @include makeBlock;
-          grid-area: form;
-          width: 1;
+            .form {
+              @include makeBlock;
+              grid-area: form;
+              width: 1;
+            }
         }
-        }
-    }
+      }
+    
+     .main-content-midasala{
+        @include makeGrid; 
+        @include makeBlock;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: "bronze silver""gold svid";    
+     }
 
     .main-content-lid {
       .team {
