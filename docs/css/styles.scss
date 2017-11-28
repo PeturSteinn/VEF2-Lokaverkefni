@@ -247,7 +247,7 @@ header {
           li {
             list-style: none;
             padding-left: 0;
-            margin-bottom: 0.5em;
+            margin: 0 1em 0.5em;
             text-align: center;
             border-bottom: 1px solid $orangeColor;
           }
@@ -257,89 +257,91 @@ header {
   }
   /* Stílar fyrir tímatöflu hér */
   .main-content-schedule {
-    @include makeGrid;
-    grid-template-columns: 1fr; // Verður 1fr 1fr 1fr í mobile
+    .brackets {
+      @include makeGrid;
+      grid-template-columns: 1fr; // Verður 1fr 1fr 1fr í mobile
 
-    div {
-      table {
-        border: 1px solid #ccc;
-        border-collapse: collapse;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        table-layout: fixed;
-        color: #010101;
-      }
-
-      table caption {
-        font-size: 1.5em;
-        margin: 0.5em 0 0.75em;
-      }
-
-      table tr {
-        background: #f8f8f8;
-        border: 1px solid #ddd;
-        padding: 0.35em;
-      }
-
-      table td,
-      table th {
-        padding: 0.625em;
-        text-align: center;
-      }
-
-      table th {
-        font-size: 0.85em;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-      }
-
-      tr:nth-child(odd) {
-        background: #ededed;
-      }
-      @media screen and (max-width: 600px) {
+      div {
         table {
-          border: 0;
+          border: 1px solid #ccc;
+          border-collapse: collapse;
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          table-layout: fixed;
+          color: #010101;
         }
 
         table caption {
-          font-size: 1.3em;
-        }
-
-        table thead {
-          border: none;
-          clip: rect(0 0 0 0);
-          height: 1px;
-          margin: -1px;
-          overflow: hidden;
-          padding: 0;
-          position: absolute;
-          width: 1px;
+          font-size: 1.5em;
+          margin: 0.5em 0 0.75em;
         }
 
         table tr {
-          border-bottom: 3px solid #ddd;
-          display: block;
-          margin-bottom: 0.625em;
+          background: #f8f8f8;
+          border: 1px solid #ddd;
+          padding: 0.35em;
         }
 
-        table td {
-          border-bottom: 1px solid #ddd;
-          display: block;
-          font-size: 0.8em;
-          text-align: right;
+        table td,
+        table th {
+          padding: 0.625em;
+          text-align: center;
         }
 
-        table td:before {
-          content: attr(data-label);
-          float: left;
-          font-weight: bold;
+        table th {
+          font-size: 0.85em;
+          letter-spacing: 0.1em;
           text-transform: uppercase;
-          padding-right: 1em;
         }
 
-        table td:last-child {
-          border-bottom: 0;
+        tr:nth-child(odd) {
+          background: #ededed;
+        }
+        @media screen and (max-width: 600px) {
+          table {
+            border: 0;
+          }
+
+          table caption {
+            font-size: 1.3em;
+          }
+
+          table thead {
+            border: none;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+          }
+
+          table tr {
+            border-bottom: 3px solid #ddd;
+            display: block;
+            margin-bottom: 0.625em;
+          }
+
+          table td {
+            border-bottom: 1px solid #ddd;
+            display: block;
+            font-size: 0.8em;
+            text-align: right;
+          }
+
+          table td:before {
+            content: attr(data-label);
+            float: left;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding-right: 1em;
+          }
+
+          table td:last-child {
+            border-bottom: 0;
+          }
         }
       }
     }
@@ -539,6 +541,19 @@ form input[type="submit"] {}
       .team {
         .players {
           /* Stíla þetta seinna */
+        }
+      }
+    }
+
+    .main-content-schedule {
+      // Engan veginn tilbúið, láta þetta skrolla
+
+      .brackets {
+        grid-template-columns: 1fr 1fr 1fr;
+        overflow: scroll;
+
+        div {
+          max-width: 50em;
         }
       }
     }
