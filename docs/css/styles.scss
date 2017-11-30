@@ -62,8 +62,8 @@ header {
 /* Icons */
 @font-face {
   font-family: 'icomoon';
-  src: url("fonts/icomoon.eot?lhai6b");
-  src: url("fonts/icomoon.eot?lhai6b#iefix") format('embedded-opentype'), url("fonts/icomoon.ttf?lhai6b") format('truetype'), url("fonts/icomoon.woff?lhai6b") format('woff'), url("fonts/icomoon.svg?lhai6b#icomoon") format('svg');
+  src: url("../fonts/icomoon.eot?lhai6b");
+  src: url("../fonts/icomoon.eot?lhai6b#iefix") format('embedded-opentype'), url("../fonts/icomoon.ttf?lhai6b") format('truetype'), url("../fonts/icomoon.woff?lhai6b") format('woff'), url("../fonts/icomoon.svg?lhai6b#icomoon") format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -592,8 +592,10 @@ header {
 }
 
 .topmenu {
-  display: grid;
-  grid-template-columns: 1fr;
+  //display: grid;
+  //grid-template-columns: 1fr;
+  display: flex;
+  flex-flow: column;
   position: fixed;
   bottom: -15em;
   padding: 0;
@@ -798,8 +800,9 @@ form input[type="submit"] {}
 
     .topmenu,
     input:checked ~ .topmenu {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      //display: grid; Var grid
+      //grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      flex-flow: row nowrap;
       position: relative;
       bottom: 0.18em;
       border-radius: 0 0 5px 5px;
