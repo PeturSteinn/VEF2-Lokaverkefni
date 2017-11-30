@@ -328,7 +328,7 @@ header {
 
   .main-content-lid {
     @include makeGrid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
     .team {
       max-width: 200px;
@@ -686,6 +686,11 @@ form input[type="submit"] {}
   /*.current-site h3:before {
     content: "Stage 1";
   }*/
+  .wrapper {
+    .main-content-lid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
 }
 /*------Viðmið 48(760px)-----*/
 @media screen and (min-width: 48em) {
