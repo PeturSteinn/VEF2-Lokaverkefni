@@ -1,50 +1,53 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="utf-8">
-        <title>CS:GO - Lið</title>
-        <link rel="stylesheet" href="css/master.css">
-    </head>
-    <body>
-        <header>
-            <img src="img/banner.png" alt="Banner" height="100%" width="100%">
-        </header>
-        <nav class="topnav">
-            <label for="toggle"></label>
-            <input type="checkbox" id="toggle">
-            <ul class="topmenu">
-                <li><span class="icon-home3"></span><a href='index.html'>Forsíða</a></li>
-                <li><span class="icon-clock"></span><a href='timatafla.html'>Tímatafla</a></li>
-                <li><span class="icon-users"></span><a href='lid.html'>Lið</a></li>
-                <li><span class="icon-cart"></span><a href='midasala.html'>Miðasala</a></li>
-                <li><span class="icon-profile"></span><a href='skraning.html' class="active">Skráning</a></li>
-            </ul>
-        </nav>
-        <section class="wrapper">
-            <div class="current-site">
-                <h3>&nbsp;<span class="icon-profile"></span> Skráning&nbsp;</h3>
-            </div>
-            <section class="main">
-                <section class="main-form">
-                    <article class="main-kynning">
-                        <section class="main-kynning-content">
-                            <h1>Liða skráning</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                        </section>
-                    </article>
-                    <div class="lid">
-                        <form action="" method="post">
-                            <div class="form">
-                                Nafn á liði *
-                                <input type="texti" name="nafnlids" s title="Sláðu inn nafn liðs" placeholder="Nafn liðs" required> Skammstöfun liðs *
-                                <input type="texti" name="skamstofun" title="Sláðu inn skamstöfun liðs" placeholder="3 stafir"> Nafn eiganda/liðstjóra *
-                                <input type="texti" name="Nafn eiganda" title="Nafn eiganda/liðstjóra" placeholder="Fullt nafn"> Email eiganda/liðstjóra *
-                                <input type="email" name="email-eiganda" placeholder="abc@abc.com" title="Sláðu email eiganda" required> Simi eiganda *
-                                <input type="tel" name="phone-number" placeholder="laga þetta input" pattern="\d{3}(?:[\-\s]?)\d{4}" title="Sláðu inn 7 tölustafi" required> Frá hvaða landi *
-                                <select>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>CS:GO - Skráning</title>
+  <link rel="stylesheet" href="css/master.css">
+</head>
+
+<body>
+  <header>
+    <img src="img/banner.png" alt="Banner" height="100%" width="100%">
+  </header>
+  <nav class="topnav">
+    <label for="toggle"></label>
+    <input type="checkbox" id="toggle">
+    <ul class="topmenu">
+      <li><span class="icon-home3"></span><a href='index.html'>Forsíða</a></li>
+      <li><span class="icon-clock"></span><a href='timatafla.html'>Tímatafla</a></li>
+      <li><span class="icon-users"></span><a href='lid.html'>Lið</a></li>
+      <li><span class="icon-cart"></span><a href='midasala.html'>Miðasala</a></li>
+      <li><span class="icon-file-text"></span><a href='#' class="active">Skráning</a></li>
+      <li><span class="icon-profile"></span><a href="info.html">Um okkur</a></li>
+    </ul>
+  </nav>
+  <section class="wrapper">
+    <div class="current-site">
+      <h3>&nbsp;<span class="icon-file-text"></span> Skráning&nbsp;</h3>
+    </div>
+    <section class="main">
+      <section class="main-form">
+        <article class="main-kynning">
+          <section class="main-kynning-content">
+            <h1>Liða skráning</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </section>
+        </article>
+        <div class="lid">
+          <form action="" method="post">
+            <div class="form">
+              Nafn á liði *
+              <input type="texti" name="nafnlids" s title="Sláðu inn nafn liðs" placeholder="Nafn liðs" required> Skammstöfun liðs *
+              <input type="texti" name="skamstofun" title="Sláðu inn skamstöfun liðs" placeholder="3 stafir"> Nafn eiganda/liðstjóra *
+              <input type="texti" name="Nafn eiganda" title="Nafn eiganda/liðstjóra" placeholder="Fullt nafn"> Email eiganda/liðstjóra *
+              <input type="email" name="email-eiganda" placeholder="abc@abc.com" title="Sláðu email eiganda" required> Simi eiganda *
+              <input type="tel" name="phone-number" placeholder="laga þetta input" pattern="\d{3}(?:[\-\s]?)\d{4}" title="Sláðu inn 7 tölustafi" required> Frá hvaða landi *
+              <select>
                                     <option value="AFG">Afghanistan</option>
                                     <option value="ALA">Åland Islands</option>
                                     <option value="ALB">Albania</option>
@@ -295,13 +298,13 @@
                                     <option value="ZMB">Zambia</option>
                                     <option value="ZWE">Zimbabwe</option>
                                 </select>
-                            </div>
-                            <div class="form1">
-                                Liðsmaður 1
-                                <input type="text" name="keppandi1" title="Sláðu inn fullt nafn keppanda 1" placeholder="Fullt nafn" required autofocus> Gamertag
-                                <input type="text" name="gamertag" title="Sláðu inn Gamertag keppanda 1" placeholder="Gamertag" required> Email Keppanda 1
-                                <input type="email" name="email-keppanda1" placeholder="abc@abc.com" title="Sláðu email keppanda" required> Fæðingardagur
-                                <select name="dagur">
+            </div>
+            <div class="form1">
+              Liðsmaður 1
+              <input type="text" name="keppandi1" title="Sláðu inn fullt nafn keppanda 1" placeholder="Fullt nafn" required autofocus> Gamertag
+              <input type="text" name="gamertag" title="Sláðu inn Gamertag keppanda 1" placeholder="Gamertag" required> Email Keppanda 1
+              <input type="email" name="email-keppanda1" placeholder="abc@abc.com" title="Sláðu email keppanda" required> Fæðingardagur
+              <select name="dagur">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -334,7 +337,7 @@
                                     <option value="30">30</option>
                                     <option value="31">31</option>
                                 </select>
-                                <select name="dagur">
+              <select name="dagur">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -348,7 +351,7 @@
                                     <option value="11">11</option>
                                     <option value="12">12</option>
                                 </select>
-                                <select name="birthyear">
+              <select name="birthyear">
                                     <option value="2007">2007</option>
                                     <option value="2006">2006</option>
                                     <option value="2005">2005</option>
@@ -458,13 +461,13 @@
                                     <option value="1901">1901</option>
                                     <option value="1900">1900</option>
                                 </select>
-                            </div>
-                            <div class="form2">
-                                Liðsmaður 2
-                                <input type="text" name="keppandi2" title="Sláðu inn fullt nafn keppanda 2" placeholder="Fullt nafn" required> Gamertag
-                                <input type="text" name="gamertag2" title="Sláðu inn Gamertag keppanda 2" placeholder="Gamertag" required> Email Keppanda 2
-                                <input type="email" name="email-keppanda2" placeholder="abc@abc.com" title="Sláðu email keppanda" required> Fæðingardagur
-                                <select name="dagur">
+            </div>
+            <div class="form2">
+              Liðsmaður 2
+              <input type="text" name="keppandi2" title="Sláðu inn fullt nafn keppanda 2" placeholder="Fullt nafn" required> Gamertag
+              <input type="text" name="gamertag2" title="Sláðu inn Gamertag keppanda 2" placeholder="Gamertag" required> Email Keppanda 2
+              <input type="email" name="email-keppanda2" placeholder="abc@abc.com" title="Sláðu email keppanda" required> Fæðingardagur
+              <select name="dagur">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -497,7 +500,7 @@
                                     <option value="30">30</option>
                                     <option value="31">31</option>
                                 </select>
-                                <select name="dagur">
+              <select name="dagur">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -511,7 +514,7 @@
                                     <option value="11">11</option>
                                     <option value="12">12</option>
                                 </select>
-                                <select name="birthyear">
+              <select name="birthyear">
                                     <option value="2007">2007</option>
                                     <option value="2006">2006</option>
                                     <option value="2005">2005</option>
@@ -621,13 +624,13 @@
                                     <option value="1901">1901</option>
                                     <option value="1900">1900</option>
                                 </select>
-                            </div>
-                            <div class="form3">
-                                Liðsmaður 3
-                                <input type="text" name="keppandi3" title="Sláðu inn fullt nafn keppanda 3" placeholder="Fullt nafn" required> Gamertag
-                                <input type="text" name="gamertag" title="Sláðu inn Gamertag keppanda 3" placeholder="Gamertag" required> Email Keppanda 3
-                                <input type="email" name="email-keppanda3" placeholder="abc@abc.com" title="Sláðu email keppanda" required> Fæðingardagur
-                                <select name="dagur">
+            </div>
+            <div class="form3">
+              Liðsmaður 3
+              <input type="text" name="keppandi3" title="Sláðu inn fullt nafn keppanda 3" placeholder="Fullt nafn" required> Gamertag
+              <input type="text" name="gamertag" title="Sláðu inn Gamertag keppanda 3" placeholder="Gamertag" required> Email Keppanda 3
+              <input type="email" name="email-keppanda3" placeholder="abc@abc.com" title="Sláðu email keppanda" required> Fæðingardagur
+              <select name="dagur">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -660,7 +663,7 @@
                                     <option value="30">30</option>
                                     <option value="31">31</option>
                                 </select>
-                                <select name="dagur">
+              <select name="dagur">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -674,7 +677,7 @@
                                     <option value="11">11</option>
                                     <option value="12">12</option>
                                 </select>
-                                <select name="birthyear">
+              <select name="birthyear">
                                     <option value="2007">2007</option>
                                     <option value="2006">2006</option>
                                     <option value="2005">2005</option>
@@ -784,13 +787,13 @@
                                     <option value="1901">1901</option>
                                     <option value="1900">1900</option>
                                 </select>
-                            </div>
-                            <div class="form4">
-                                Liðsmaður 4
-                                <input type="text" name="keppandi1" title="Sláðu inn fullt nafn keppanda 4" placeholder="Fullt nafn" required> Gamertag
-                                <input type="text" name="gamertag" title="Sláðu inn Gamertag keppanda 4" placeholder="Gamertag" required> Email Keppanda 4
-                                <input type="email" name="email-keppanda4" placeholder="abc@abc.com" title="Sláðu email keppanda" required> Fæðingardagur
-                                <select name="dagur">
+            </div>
+            <div class="form4">
+              Liðsmaður 4
+              <input type="text" name="keppandi1" title="Sláðu inn fullt nafn keppanda 4" placeholder="Fullt nafn" required> Gamertag
+              <input type="text" name="gamertag" title="Sláðu inn Gamertag keppanda 4" placeholder="Gamertag" required> Email Keppanda 4
+              <input type="email" name="email-keppanda4" placeholder="abc@abc.com" title="Sláðu email keppanda" required> Fæðingardagur
+              <select name="dagur">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -823,7 +826,7 @@
                                     <option value="30">30</option>
                                     <option value="31">31</option>
                                 </select>
-                                <select name="dagur">
+              <select name="dagur">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -837,7 +840,7 @@
                                     <option value="11">11</option>
                                     <option value="12">12</option>
                                 </select>
-                                <select name="birthyear">
+              <select name="birthyear">
                                     <option value="2007">2007</option>
                                     <option value="2006">2006</option>
                                     <option value="2005">2005</option>
@@ -947,13 +950,13 @@
                                     <option value="1901">1901</option>
                                     <option value="1900">1900</option>
                                 </select>
-                            </div>
-                            <div class="form5">
-                                Liðsmaður 5
-                                <input type="text" name="keppandi5" title="Sláðu inn fullt nafn keppanda 5" placeholder="Fullt nafn" required> Gamertag
-                                <input type="text" name="gamertag" title="Sláðu inn Gamertag keppanda 5" placeholder="Gamertag" required> Email Keppanda 5
-                                <input type="email5" name="email-keppanda5" placeholder="abc@abc.com" title="Sláðu email keppanda" required> Fæðingardagur
-                                <select name="aldur" class="aldur5">
+            </div>
+            <div class="form5">
+              Liðsmaður 5
+              <input type="text" name="keppandi5" title="Sláðu inn fullt nafn keppanda 5" placeholder="Fullt nafn" required> Gamertag
+              <input type="text" name="gamertag" title="Sláðu inn Gamertag keppanda 5" placeholder="Gamertag" required> Email Keppanda 5
+              <input type="email5" name="email-keppanda5" placeholder="abc@abc.com" title="Sláðu email keppanda" required> Fæðingardagur
+              <select name="aldur" class="aldur5">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -986,7 +989,7 @@
                                     <option value="30">30</option>
                                     <option value="31">31</option>
                                 </select>
-                                <select name="dagur">
+              <select name="dagur">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -1000,7 +1003,7 @@
                                     <option value="11">11</option>
                                     <option value="12">12</option>
                                 </select>
-                                <select name="birthyear">
+              <select name="birthyear">
                                     <option value="2007">2007</option>
                                     <option value="2006">2006</option>
                                     <option value="2005">2005</option>
@@ -1110,25 +1113,26 @@
                                     <option value="1901">1901</option>
                                     <option value="1900">1900</option>
                                 </select>
-                                <label class="test">
+              <label class="test">
                                 <span class="form-title">Athugasemdir:</span>
                                 <textarea name="comments" rows="4" cols="30"></textarea>
                                 </label>
-                                <input type="submit" name="sumbmit" value="Skrá lið">
-                            </div>
-                        </form>
-                    </div>
-                </section>
-            </section>
-            <footer>
-                <section class="footer-content">
-                    <h3>Fótur</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                        irure dolor in reprehenderit in voluptate velit.
-                    </p>
-                </section>
-            </footer>
-        </section>
-        <span class="signature">&#169;Pétur Steinn Guðmundsson & Róbert Ingi Hálfdanarson&nbsp;</span>
-    </body>
+              <input type="submit" name="sumbmit" value="Skrá lið">
+            </div>
+          </form>
+        </div>
+      </section>
+    </section>
+    <footer>
+      <section class="footer-content">
+        <h3>Fótur</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit in voluptate velit.
+        </p>
+      </section>
+    </footer>
+  </section>
+  <span class="signature">&#169;Pétur Steinn Guðmundsson & Róbert Ingi Hálfdanarson&nbsp;</span>
+</body>
+
 </html>

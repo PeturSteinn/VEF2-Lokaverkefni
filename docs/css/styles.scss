@@ -531,6 +531,28 @@ header {
       }
     }
   }
+
+  .main-content-info {
+    @include makeGrid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "petur" "robert" "mynd";
+
+    .Petur {
+      grid-area: petur;
+    }
+
+    .Robert {
+      grid-area: robert;
+    }
+
+    .mynd-PR {
+      grid-area: mynd;
+    }
+
+    div {
+      @include makeBlock;
+    }
+  }
 }
 /* ---Navigation---*/
 .topnav {
@@ -687,12 +709,22 @@ form input[type="submit"] {}
 }
 /*------Viðmið 37.5(600px)-----*/
 @media screen and (min-width: 37.5em) {
-  /*.current-site h3:before {
+  .current-site h3:before {
     content: "Stage 1";
-  }*/
+  }
+
   .wrapper {
     .main-content-lid {
       grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .main-content-info {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "petur robert" "mynd mynd";
+
+      .mynd-PR {
+        text-align: center;
+      }
     }
   }
 }
@@ -767,16 +799,17 @@ form input[type="submit"] {}
     .topmenu,
     input:checked ~ .topmenu {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
       position: relative;
       bottom: 0.18em;
       border-radius: 0 0 5px 5px;
       transition: none;
     }
   }
-  /*.current-site h3:before {
+
+  .current-site h3:before {
     content: "Stage 2";
-  }*/
+  }
 }
 /*------Viðmið 60(960px)------*/
 @media screen and (min-width: 60em) {
@@ -789,7 +822,8 @@ form input[type="submit"] {}
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }
-  /*.current-site h3:before {
+
+  .current-site h3:before {
     content: "Stage 3";
-  }*/
+  }
 }
