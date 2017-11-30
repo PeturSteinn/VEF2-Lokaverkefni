@@ -533,9 +533,19 @@ header {
   }
 
   .main-content-info {
+    // Hér
     @include makeGrid;
     grid-template-columns: 1fr;
-    grid-template-areas: "petur" "robert" "mynd";
+    grid-template-areas: "logo" "para" "petur" "robert" "mynd";
+
+    .info-logo {
+      grid-area: logo;
+      text-align: center;
+    }
+
+    .info-paragraph {
+      grid-area: para;
+    }
 
     .Petur {
       grid-area: petur;
@@ -547,6 +557,22 @@ header {
 
     .mynd-PR {
       grid-area: mynd;
+
+      .myndabox {
+        text-align: center;
+
+        img {
+          border-bottom: 1px solid $orangeColor;
+          height: 240px;
+          width: 320px;
+        }
+
+        p {
+          margin: 0;
+          font-size: 10px;
+          opacity: 0.5;
+        }
+      }
     }
 
     div {
@@ -722,10 +748,10 @@ form input[type="submit"] {}
 
     .main-content-info {
       grid-template-columns: 1fr 1fr;
-      grid-template-areas: "petur robert" "mynd mynd";
+      grid-template-areas: "logo para" "petur robert" "mynd mynd";
 
       .mynd-PR {
-        text-align: center;
+        //text-align: center;
       }
     }
   }
