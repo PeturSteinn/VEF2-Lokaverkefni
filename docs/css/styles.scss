@@ -533,26 +533,34 @@ header {
   }
 
   .main-content-info {
-    // Hér
     @include makeGrid;
     grid-template-columns: 1fr;
     grid-template-areas: "logo" "para" "petur" "robert" "mynd";
 
     .info-logo {
       grid-area: logo;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      @include makeBlock;
+
+      img {
+        width: 155px;
+      }
     }
 
     .info-paragraph {
       grid-area: para;
+      @include makeBlock;
     }
 
     .Petur {
       grid-area: petur;
+      @include makeBlock;
     }
 
     .Robert {
       grid-area: robert;
+      @include makeBlock;
     }
 
     .mynd-PR {
@@ -565,10 +573,12 @@ header {
           border-bottom: 1px solid $orangeColor;
           height: 240px;
           width: 320px;
+          @include makeBlock;
+          margin-bottom: 0;
         }
 
         p {
-          margin: 0;
+          margin: -1.6em 0 0;
           font-size: 10px;
           opacity: 0.5;
         }
@@ -576,7 +586,7 @@ header {
     }
 
     div {
-      @include makeBlock;
+      //@include makeBlock;
     }
   }
 }
@@ -637,7 +647,7 @@ header {
     border: 0;
     padding: 0;
     border-bottom: $greyColor;
-    margin: 0 auto;
+    margin-left: calc(50% - 3.3em);
     display: flex;
     flex-flow: row;
     align-items: baseline;
@@ -645,7 +655,7 @@ header {
 
   a {
     display: block;
-    text-align: center;
+    //text-align: center;
     text-decoration: none;
     font-weight: bold;
     padding: 0.25em;
@@ -753,6 +763,12 @@ form input[type="submit"] {}
       .mynd-PR {
         //text-align: center;
       }
+
+      .info-logo {
+        img {
+          width: 200px;
+        }
+      }
     }
   }
 }
@@ -822,6 +838,12 @@ form input[type="submit"] {}
     input,
     label {
       display: none;
+    }
+
+    .topmenu {
+      li {
+        margin: auto;
+      }
     }
 
     .topmenu,
