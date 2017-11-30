@@ -380,6 +380,10 @@ header {
       grid-template-columns: 1fr; // Verður 1fr 1fr 1fr í mobile
 
       div {
+        @include makeBlock;
+        text-align: center;
+        max-width: 100%;
+
         table {
           border: 1px solid #ccc;
           border-collapse: collapse;
@@ -750,18 +754,6 @@ form input[type="submit"] {}
     .team {
       .players {
         /* Stíla þetta seinna */
-      }
-    }
-  }
-
-  .main-content-schedule {
-    // Engan veginn tilbúið, láta þetta skrolla
-    .brackets {
-      grid-template-columns: 1fr 1fr 1fr;
-      overflow: scroll;
-
-      div {
-        max-width: 50em;
       }
     }
   }
