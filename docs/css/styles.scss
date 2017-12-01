@@ -571,8 +571,6 @@ header {
 
         img {
           border-bottom: 1px solid $orangeColor;
-          height: 240px;
-          width: 320px;
           @include makeBlock;
           margin-bottom: 0;
         }
