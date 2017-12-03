@@ -628,7 +628,29 @@ form input[type="submit"] {}
       @include makeBlock;
       grid-template-columns: 50% 50%;
       grid-template-areas: "bronze silver""gold svid";
+        .bronze,
+        .gold{
+            margin-right: 2em;
+        }
+        .silver,
+        .svid{
+            margin-left: 2em;
+        }
+        .svid{
+            img{
+                position: relative;
+                top:4em;
+                width: 150%;
+                justify-content: center;
+                display: block;
+                margin-left: auto;
+                margin-right: auto 
+            }
+        }
+          
+       
     }
+    
 
     form {
       width: 100%;
