@@ -25,6 +25,7 @@ $darkblueColor: #2d3142;
 @mixin midar {
   padding: 0 2em;
   border: 2px solid $darkblueColor;
+  width: auto;
 }
 @mixin midarlinkar {
   background-color: $darkblueColor;
@@ -40,9 +41,6 @@ $darkblueColor: #2d3142;
     text-align: center;
     color: white;
 
-    &:hover {
-      color: lighten($darkblueColor,5);
-    }
   }
 }
 /* ---Layout---*/
@@ -58,6 +56,101 @@ body {
 
 header {
   grid-area: header;
+}
+/* Icons */
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot?lhai6b");
+  src: url("../fonts/icomoon.eot?lhai6b#iefix") format('embedded-opentype'), url("../fonts/icomoon.ttf?lhai6b") format('truetype'), url("../fonts/icomoon.woff?lhai6b") format('woff'), url("../fonts/icomoon.svg?lhai6b#icomoon") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home3:before {
+  content: "\e902";
+}
+
+.icon-office:before {
+  content: "\e903";
+}
+
+.icon-newspaper:before {
+  content: "\e904";
+}
+
+.icon-pencil:before {
+  content: "\e905";
+}
+
+.icon-file-text:before {
+  content: "\e922";
+}
+
+.icon-profile:before {
+  content: "\e923";
+}
+
+.icon-cart:before {
+  content: "\e93a";
+}
+
+.icon-compass:before {
+  content: "\e949";
+}
+
+.icon-clock:before {
+  content: "\e94e";
+}
+
+.icon-keyboard:before {
+  content: "\e955";
+}
+
+.icon-users:before {
+  content: "\e972";
+}
+
+.icon-paragraph-right:before {
+  content: "\ea79";
+}
+
+.icon-mail2:before {
+  content: "\ea84";
+}
+
+.icon-spotify:before {
+  content: "\ea94";
+}
+
+.icon-steam2:before {
+  content: "\eaad";
+}
+
+.icon-github:before {
+  content: "\eab0";
+}
+
+.icon-tux:before {
+  content: "\eabd";
+}
+
+.icon-appleinc:before {
+  content: "\eabe";
 }
 
 .wrapper {
@@ -233,7 +326,7 @@ header {
 
   .main-content-lid {
     @include makeGrid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
     .team {
       max-width: 200px;
@@ -285,6 +378,10 @@ header {
       grid-template-columns: 1fr; // Verður 1fr 1fr 1fr í mobile
 
       div {
+        @include makeBlock;
+        text-align: center;
+        max-width: 100%;
+
         table {
           border: 1px solid #ccc;
           border-collapse: collapse;
@@ -382,13 +479,17 @@ header {
       h1 {
         color: #cd7f32;
       }
-
       .midar {
         @include midar;
       }
 
       .kaupamida {
         @include midarlinkar;
+          a{
+              &:hover{
+                  color: #cd7f32;
+              }
+          }
       }
     }
 
@@ -405,6 +506,11 @@ header {
 
       .kaupamida {
         @include midarlinkar;
+          a{
+              &:hover{
+                  color: #c0c0c0;
+              }
+          }
       }
     }
 
@@ -421,6 +527,11 @@ header {
 
       .kaupamida {
         @include midarlinkar;
+          a{
+              &:hover{
+                  color: #ffd700;
+              }
+          }
       }
     }
 
@@ -429,7 +540,85 @@ header {
         align-items: center;
         width: 100%;
         grid-area: svid;
+        padding-bottom: 2em;
       }
+    }
+    .map{
+        @include makeBlock;
+        background-color: $darkblueColor;
+        .texti{
+            
+            background-color: $darkblueColor;
+        }
+        
+        
+      }
+      .mynd{
+          @include makeBlock;
+          background-color: $darkblueColor;
+          img{
+              width: 100%;
+            
+          }
+          
+          
+          
+      }
+    }
+
+  .main-content-info {
+    @include makeGrid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "logo" "para" "petur" "robert" "mynd";
+
+    .info-logo {
+      grid-area: logo;
+      display: flex;
+      justify-content: center;
+      @include makeBlock;
+
+      img {
+        width: 155px;
+      }
+    }
+
+    .info-paragraph {
+      grid-area: para;
+      @include makeBlock;
+    }
+
+    .Petur {
+      grid-area: petur;
+      @include makeBlock;
+    }
+
+    .Robert {
+      grid-area: robert;
+      @include makeBlock;
+    }
+
+    .mynd-PR {
+      grid-area: mynd;
+
+      .myndabox {
+        text-align: center;
+
+        img {
+          border-bottom: 1px solid $orangeColor;
+          @include makeBlock;
+          margin-bottom: 0;
+        }
+
+        p {
+          margin: -1.6em 0 0;
+          font-size: 10px;
+          opacity: 0.5;
+        }
+      }
+    }
+
+    div {
+      //@include makeBlock;
     }
   }
 }
@@ -471,8 +660,10 @@ header {
 }
 
 .topmenu {
-  display: grid;
-  grid-template-columns: 1fr;
+  //display: grid;
+  //grid-template-columns: 1fr;
+  display: flex;
+  flex-flow: column;
   position: fixed;
   bottom: -15em;
   padding: 0;
@@ -488,16 +679,20 @@ header {
     border: 0;
     padding: 0;
     border-bottom: $greyColor;
-    margin: 0 auto;
+    margin-left: calc(50% - 3.3em);
+    display: flex;
+    flex-flow: row;
+    align-items: baseline;
   }
 
   a {
     display: block;
-    text-align: center;
+    //text-align: center;
     text-decoration: none;
     font-weight: bold;
     padding: 0.25em;
     color: $whiteColor;
+    
   }
 }
 
@@ -588,6 +783,27 @@ form input[type="submit"] {}
   .current-site h3:before {
     content: "Stage 1";
   }
+
+  .wrapper {
+    .main-content-lid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .main-content-info {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "logo para" "petur robert" "mynd mynd";
+
+      .mynd-PR {
+        //text-align: center;
+      }
+
+      .info-logo {
+        img {
+          width: 200px;
+        }
+      }
+    }
+  }
 }
 /*------Viðmið 48(760px)-----*/
 @media screen and (min-width: 48em) {
@@ -630,21 +846,45 @@ form input[type="submit"] {}
       grid-template-areas: "bronze silver""gold svid";
         .bronze,
         .gold{
-            margin-right: 2em;
+            margin-right: 1em;
+            
+        }
+        .gold{
+            a{
+                &:hover{
+                    color: #ffd700;
+                }
+            }
+        }
+        .silver{
+            a{
+                &:hover{
+                    color:  #c0c0c0;
+                }
+            }
+        }
+        .bronze{
+            a{
+            &:hover{
+                    color: #cd7f32;
+                }
+            }
+            
         }
         .silver,
         .svid{
-            margin-left: 2em;
+            margin-left: 1em;
+            
         }
         .svid{
             img{
                 position: relative;
                 top:4em;
-                width: 150%;
+                width: 100%;
                 justify-content: center;
                 display: block;
                 margin-left: auto;
-                margin-right: auto 
+                margin-right: auto; 
             }
         }
           
@@ -672,18 +912,6 @@ form input[type="submit"] {}
       }
     }
   }
-
-  .main-content-schedule {
-    // Engan veginn tilbúið, láta þetta skrolla
-    .brackets {
-      grid-template-columns: 1fr 1fr 1fr;
-      overflow: scroll;
-
-      div {
-        max-width: 50em;
-      }
-    }
-  }
   /* ---Navigation---*/
   .topnav {
     input,
@@ -691,10 +919,17 @@ form input[type="submit"] {}
       display: none;
     }
 
+    .topmenu {
+      li {
+        margin: auto;
+      }
+    }
+
     .topmenu,
     input:checked ~ .topmenu {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      //display: grid; Var grid
+      //grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      flex-flow: row nowrap;
       position: relative;
       bottom: 0.18em;
       border-radius: 0 0 5px 5px;
