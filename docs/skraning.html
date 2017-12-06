@@ -42,12 +42,12 @@
           <form action="" method="post">
             <div class="form">
               Nafn á liði *
-              <input type="texti" name="nafnlids" s title="Sláðu inn nafn liðs" placeholder="Nafn liðs" required> Skammstöfun liðs *
-              <input type="texti" name="skamstofun" title="Sláðu inn skamstöfun liðs" placeholder="3 stafir"> Nafn eiganda/liðstjóra *
-              <input type="texti" name="Nafn eiganda" title="Nafn eiganda/liðstjóra" placeholder="Fullt nafn"> Email eiganda/liðstjóra *
+              <input type="texti" name="nafnlids" title="Sláðu inn nafn liðs" placeholder="Nafn liðs" required> Skammstöfun liðs *
+              <input type="texti" name="skamstofun" title="Sláðu inn skamstöfun liðs" placeholder="3 stafir" required> Nafn eiganda/liðstjóra *
+              <input type="texti" name="Nafn eiganda" title="Nafn eiganda/liðstjóra" placeholder="Fullt nafn" required> Email eiganda/liðstjóra *
               <input type="email" name="email-eiganda" placeholder="abc@abc.com" title="Sláðu email eiganda" required> Simi eiganda *
-              <input type="tel" name="phone-number" placeholder="laga þetta input" pattern="\d{3}(?:[\-\s]?)\d{4}" title="Sláðu inn 7 tölustafi" required> Frá hvaða landi *
-              <select>
+              <input type="tel" name="phone-number" placeholder="laga þetta input" title="Sláðu inn 7 tölustafi" required> Frá hvaða landi *
+              <select required>
                                     <option value="AFG">Afghanistan</option>
                                     <option value="ALA">Åland Islands</option>
                                     <option value="ALB">Albania</option>
@@ -303,8 +303,8 @@
               Leikmaður 1 *
                 <input type="text" name="Leikmaður" title="Sláðu inn fullt nafn Leikmaður 1" placeholder="Fullt nafn" required> Gamertag *
               <input type="text" name="gamertag" title="Sláðu inn Gamertag keppanda 1" placeholder="Gamertag" required> Email Leikmaður 1
-              <input type="email" name="email-keppanda1" placeholder="abc@abc.com" title="Sláðu email keppanda" > Fæðingardagur *
-              <select name="day">
+              <input type="email" name="email-keppanda1" placeholder="abc@abc.com" title="Sláðu email keppanda"> Fæðingardagur *
+              <select name="day" required>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -337,7 +337,7 @@
                                     <option value="30">30</option>
                                     <option value="31">31</option>
                                 </select>
-                                <select name="month">
+                                <select name="month" required>
                                     <option value="1">Janúar</option>
                                     <option value="2">Febrúar</option>
                                     <option value="3">Mars</option>
@@ -351,7 +351,7 @@
                                     <option value="11">Nóvember</option>
                                     <option value="12">Desember</option>
                                 </select>
-              <select name="year">
+              <select name="year" required>
                                     <option value="2007">2007</option>
                                     <option value="2006">2006</option>
                                     <option value="2005">2005</option>
@@ -466,8 +466,8 @@
               Leikmaður 2 *
               <input type="text" name="Leikmaður" title="Sláðu inn fullt nafn keppanda 2" placeholder="Fullt nafn" required> Gamertag *
               <input type="text" name="gamertag2" title="Sláðu inn Gamertag keppanda 2" placeholder="Gamertag" required> Email Leikmaður 2
-              <input type="email" name="email-keppanda2" placeholder="abc@abc.com" title="Sláðu email keppanda" > Fæðingardagur *
-              <select name="day">
+              <input type="email" name="email-keppanda2" placeholder="abc@abc.com" title="Sláðu email keppanda"> Fæðingardagur *
+              <select name="day" required>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -500,7 +500,7 @@
                                     <option value="30">30</option>
                                     <option value="31">31</option>
                                 </select>
-                                <select name="month">
+                                <select name="month" required>
                                     <option value="1">Janúar</option>
                                     <option value="2">Febrúar</option>
                                     <option value="3">Mars</option>
@@ -514,7 +514,7 @@
                                     <option value="11">Nóvember</option>
                                     <option value="12">Desember</option>
                                 </select>
-              <select name="year">
+              <select name="year" required>
                                     <option value="2007">2007</option>
                                     <option value="2006">2006</option>
                                     <option value="2005">2005</option>
@@ -629,8 +629,8 @@
               Leikmaður 3 *
               <input type="text" name="Leikmaður3" title="Sláðu inn fullt nafn keppanda 3" placeholder="Fullt nafn" required> Gamertag *
               <input type="text" name="gamertag" title="Sláðu inn Gamertag keppanda 3" placeholder="Gamertag" required> Email Leikmaður 3
-              <input type="email" name="email-keppanda3" placeholder="abc@abc.com" title="Sláðu email keppanda" > Fæðingardagur *
-              <select name="day">
+              <input type="email" name="email-keppanda3" placeholder="abc@abc.com" title="Sláðu email keppanda"> Fæðingardagur *
+              <select name="day" required>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -663,7 +663,7 @@
                                     <option value="30">30</option>
                                     <option value="31">31</option>
                                 </select>
-                                <select name="month">
+                                <select name="month" required>
                                     <option value="1">Janúar</option>
                                     <option value="2">Febrúar</option>
                                     <option value="3">Mars</option>
@@ -677,7 +677,7 @@
                                     <option value="11">Nóvember</option>
                                     <option value="12">Desember</option>
                                 </select>
-              <select name="birthyear">
+              <select name="birthyear" required>
                                     <option value="2007">2007</option>
                                     <option value="2006">2006</option>
                                     <option value="2005">2005</option>
@@ -791,9 +791,9 @@
             <div class="form4">
               Leikmaður 4 *
               <input type="text" name="Leikmaður4" title="Sláðu inn fullt nafn keppanda 4" placeholder="Fullt nafn" required> Gamertag *
-              <input type="text" name="gamertag" title="Sláðu inn Gamertag keppanda 4" placeholder="Gamertag" > Email Keppanda 4
-              <input type="email" name="email-keppanda4" placeholder="abc@abc.com" title="Sláðu email keppanda" > Fæðingardagur *
-              <select name="dagur">
+              <input type="text" name="gamertag" title="Sláðu inn Gamertag keppanda 4" placeholder="Gamertag" required> Email Keppanda 4
+              <input type="email" name="email-keppanda4" placeholder="abc@abc.com" title="Sláðu email keppanda"> Fæðingardagur *
+              <select name="dagur" required>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -826,7 +826,7 @@
                                     <option value="30">30</option>
                                     <option value="31">31</option>
                                 </select>
-                                <select name="month">
+                                <select name="month" required>
                                     <option value="1">Janúar</option>
                                     <option value="2">Febrúar</option>
                                     <option value="3">Mars</option>
@@ -840,7 +840,7 @@
                                     <option value="11">Nóvember</option>
                                     <option value="12">Desember</option>
                                 </select>
-              <select name="birthyear">
+              <select name="birthyear" required>
                                     <option value="2007">2007</option>
                                     <option value="2006">2006</option>
                                     <option value="2005">2005</option>
@@ -954,9 +954,9 @@
             <div class="form5">
               Leikmaður 5 *
                 <input type="text" name="keppandi5" title="Sláðu inn fullt nafn keppanda 5" placeholder="Fullt nafn" required> Gamertag *
-              <input type="text" name="gamertag" title="Sláðu inn Gamertag keppanda 5" placeholder="Gamertag" > Email Leikmaður 5 *
-              <input type="email5" name="email-keppanda5" placeholder="abc@abc.com" title="Sláðu email keppanda" required> Fæðingardagur *
-              <select name="aldur" class="aldur5">
+              <input type="text" name="gamertag" title="Sláðu inn Gamertag keppanda 5" placeholder="Gamertag" required> Email Leikmaður 5
+              <input type="email5" name="email-keppanda5" placeholder="abc@abc.com" title="Sláðu email keppanda"> Fæðingardagur *
+              <select name="aldur" class="aldur5"  required>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -989,7 +989,7 @@
                                     <option value="30">30</option>
                                     <option value="31">31</option>
                                 </select>
-                                <select name="month">
+                                <select name="month" required>
                                     <option value="1">Janúar</option>
                                     <option value="2">Febrúar</option>
                                     <option value="3">Mars</option>
@@ -1003,7 +1003,7 @@
                                     <option value="11">Nóvember</option>
                                     <option value="12">Desember</option>
                                 </select>
-              <select name="birthyear">
+              <select name="birthyear" required>
                                     <option value="2007">2007</option>
                                     <option value="2006">2006</option>
                                     <option value="2005">2005</option>
@@ -1113,7 +1113,7 @@
                                     <option value="1901">1901</option>
                                     <option value="1900">1900</option>
                                 </select>
-              <label class="test">
+              <label>
                                 <span class="form-title">Athugasemdir:</span>
                                 <textarea name="comments" rows="4" cols="30"></textarea>
                                 </label>
