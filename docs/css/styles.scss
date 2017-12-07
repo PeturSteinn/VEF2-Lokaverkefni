@@ -27,6 +27,23 @@ $darkblueColor: #2d3142;
   border-bottom: 2px solid $orangeColor;
   margin-bottom: 0.5em;
 }
+@mixin resetAnimation {
+  .a,
+  .b,
+  .c,
+  .d,
+  .e,
+  .f,
+  .g,
+  .h,
+  .i,
+  .j,
+  .k,
+  .l {
+    display: none;
+  }
+}
+//@include resetAnimation;
 @mixin midar {
   padding: 0 2em;
   border: 2px solid $darkblueColor;
@@ -47,6 +64,72 @@ $darkblueColor: #2d3142;
     color: white;
   }
 }
+//@include resetAnimation;
+@keyframes signup_text {
+  0% {}
+
+  5% {
+    font-family: "Open Sans",Helvetica,Aril,sans-serif;
+    content: "villt";
+  }
+
+  10% {
+    font-family: "Open Sans",Helvetica,Aril,sans-serif;
+    content: "þú";
+  }
+
+  15% {
+    font-family: "Open Sans",Helvetica,Aril,sans-serif;
+    content: "keppa";
+  }
+
+  20% {
+    font-family: "Open Sans",Helvetica,Aril,sans-serif;
+    content: "á";
+  }
+
+  30% {
+    font-family: "Open Sans",Helvetica,Aril,sans-serif;
+    content: "móti";
+  }
+
+  35% {
+    font-family: "Open Sans",Helvetica,Aril,sans-serif;
+    content: "bestu";
+  }
+
+  40% {
+    font-family: counterstrike;
+    content: "counter-strike";
+  }
+
+  45% {
+    font-family: "Open Sans",Helvetica,Aril,sans-serif;
+    content: "leikmönnum";
+  }
+
+  55% {
+    font-family: "Open Sans",Helvetica,Aril,sans-serif;
+    content: "í";
+  }
+
+  60% {
+    font-family: "Open Sans",Helvetica,Aril,sans-serif;
+    content: "heimi";
+  }
+
+  65% {
+    font-family: "Open Sans",Helvetica,Aril,sans-serif;
+    content: "?";
+  }
+
+  85% {
+    font-family: "Open Sans",Helvetica,Aril,sans-serif;
+    content: "Skráðu þig núna!";
+  }
+
+  100% {}
+}
 /* ---Layout---*/
 body {
   margin: 0 auto;
@@ -61,11 +144,16 @@ body {
 header {
   grid-area: header;
 }
+/* CS font */
+@font-face {
+  font-family: counterstrike;
+  src: url("../fonts/cs/cs_regular.ttf");
+}
 /* Icons */
 @font-face {
   font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?lhai6b");
-  src: url("../fonts/icomoon.eot?lhai6b#iefix") format('embedded-opentype'), url("../fonts/icomoon.ttf?lhai6b") format('truetype'), url("../fonts/icomoon.woff?lhai6b") format('woff'), url("../fonts/icomoon.svg?lhai6b#icomoon") format('svg');
+  src: url("../fonts/icomoon/icomoon.eot?lhai6b");
+  src: url("../fonts/icomoon/icomoon.eot?lhai6b#iefix") format('embedded-opentype'), url("../fonts/icomoon/icomoon.ttf?lhai6b") format('truetype'), url("../fonts/icomoon/icomoon.woff?lhai6b") format('woff'), url("../fonts/icomoon/icomoon.svg?lhai6b#icomoon") format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -174,6 +262,21 @@ header {
       display: inline-block;
       padding: 0.1em;
       border-bottom: 2px solid $orangeColor;
+    }
+  }
+
+  .skraduthig {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: $orangeColor;
+
+    &:after {
+      animation: signup_text 5s linear infinite;
+      display: block;
+      content: "Skráðu þig núna!";
+      font-size: 25px;
     }
   }
 
@@ -300,8 +403,9 @@ header {
       @include makeBlock;
 
       .main-kynning-content {
-        max-width: 33.5em;
         margin: 0 auto;
+        max-width: 37.5em;
+        text-align: center;
       }
     }
 
