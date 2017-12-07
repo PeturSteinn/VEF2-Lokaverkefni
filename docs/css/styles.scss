@@ -988,7 +988,7 @@ form input[type="submit"] {}
 /*------Viðmið 37.5(600px)-----*/
 @media screen and (min-width: 37.5em) {
   .current-site h3:before {
-    content: "Stage 1";
+    //content: "Stage 1";
   }
 
   .wrapper {
@@ -1169,7 +1169,7 @@ form input[type="submit"] {}
   }
 
   .current-site h3:before {
-    content: "Stage 2";
+    //content: "Stage 2";
   }
 }
 /*------Viðmið 60(960px)------*/
@@ -1187,6 +1187,6 @@ form input[type="submit"] {}
   }
 
   .current-site h3:before {
-    content: "Stage 3";
+    //content: "Stage 3";
   }
 }
