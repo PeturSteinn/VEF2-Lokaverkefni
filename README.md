@@ -1,4 +1,5 @@
 # VEF2-Lokaverkefni
+
 ## Dagbók
 
 ### 20.11.2017
@@ -16,3 +17,6 @@ ___
 ### 04.12.2017
 ##### Skrifuðum inn á síðuna hvenar þetta var og um viðburðinn
 ___
+=======
+https://petursteinn.github.io/VEF2-Lokaverkefni/
+

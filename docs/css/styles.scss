@@ -20,8 +20,30 @@ $darkblueColor: #2d3142;
   padding: 1em;
   background-color: lighten($darkblueColor, 5);
   border-radius: 10px;
-  line-height: 1.2;
+  line-height: 1.5;
 }
+@mixin makeList {
+  list-style: none;
+  border-bottom: 2px solid $orangeColor;
+  margin-bottom: 0.5em;
+}
+@mixin resetAnimation {
+  .a,
+  .b,
+  .c,
+  .d,
+  .e,
+  .f,
+  .g,
+  .h,
+  .i,
+  .j,
+  .k,
+  .l {
+    display: none;
+  }
+}
+//@include resetAnimation;
 @mixin midar {
   padding: 0 2em;
   border: 2px solid $darkblueColor;
@@ -40,8 +62,73 @@ $darkblueColor: #2d3142;
     padding: 0.3em;
     text-align: center;
     color: white;
-
   }
+}
+//@include resetAnimation;
+@keyframes signup_text {
+  0% {}
+
+  5% {
+    font-family: "Open Sans",Helvetica,Aril,sans-serif;
+    content: "villt";
+  }
+
+  10% {
+    font-family: "Open Sans",Helvetica,Aril,sans-serif;
+    content: "þú";
+  }
+
+  15% {
+    font-family: "Open Sans",Helvetica,Aril,sans-serif;
+    content: "keppa";
+  }
+
+  20% {
+    font-family: "Open Sans",Helvetica,Aril,sans-serif;
+    content: "á";
+  }
+
+  30% {
+    font-family: "Open Sans",Helvetica,Aril,sans-serif;
+    content: "móti";
+  }
+
+  35% {
+    font-family: "Open Sans",Helvetica,Aril,sans-serif;
+    content: "bestu";
+  }
+
+  40% {
+    font-family: counterstrike;
+    content: "counter-strike";
+  }
+
+  45% {
+    font-family: "Open Sans",Helvetica,Aril,sans-serif;
+    content: "leikmönnum";
+  }
+
+  55% {
+    font-family: "Open Sans",Helvetica,Aril,sans-serif;
+    content: "í";
+  }
+
+  60% {
+    font-family: "Open Sans",Helvetica,Aril,sans-serif;
+    content: "heimi";
+  }
+
+  65% {
+    font-family: "Open Sans",Helvetica,Aril,sans-serif;
+    content: "?";
+  }
+
+  85% {
+    font-family: "Open Sans",Helvetica,Aril,sans-serif;
+    content: "Skráðu þig núna!";
+  }
+
+  100% {}
 }
 /* ---Layout---*/
 body {
@@ -57,11 +144,16 @@ body {
 header {
   grid-area: header;
 }
+/* CS font */
+@font-face {
+  font-family: counterstrike;
+  src: url("../fonts/cs/cs_regular.ttf");
+}
 /* Icons */
 @font-face {
   font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?lhai6b");
-  src: url("../fonts/icomoon.eot?lhai6b#iefix") format('embedded-opentype'), url("../fonts/icomoon.ttf?lhai6b") format('truetype'), url("../fonts/icomoon.woff?lhai6b") format('woff'), url("../fonts/icomoon.svg?lhai6b#icomoon") format('svg');
+  src: url("../fonts/icomoon/icomoon.eot?lhai6b");
+  src: url("../fonts/icomoon/icomoon.eot?lhai6b#iefix") format('embedded-opentype'), url("../fonts/icomoon/icomoon.ttf?lhai6b") format('truetype'), url("../fonts/icomoon/icomoon.woff?lhai6b") format('woff'), url("../fonts/icomoon/icomoon.svg?lhai6b#icomoon") format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -173,6 +265,21 @@ header {
     }
   }
 
+  .skraduthig {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: $orangeColor;
+
+    &:after {
+      animation: signup_text 5s linear infinite;
+      display: block;
+      content: "Skráðu þig núna!";
+      font-size: 25px;
+    }
+  }
+
   .main {
     grid-area: main;
   }
@@ -181,11 +288,73 @@ header {
     @include makeBlock;
     grid-area: footer;
     text-align: center;
-  }
+    //border-bottom: 1px solid $orangeColor; custom botn á footer
+    .footer-content {
+      margin: 0 auto;
+      @include makeGrid;
+      grid-template-rows: 25% 50% 25%;
 
-  .footer-content {
-    max-width: 37.5em;
-    margin: 0 auto;
+      div {
+        margin-left: 2em;
+        margin-right: 2em;
+      }
+
+      .col-1 {
+        font-size: 0.7em;
+
+        ul {
+          padding-left: 0;
+
+          li {
+            @include makeList;
+            padding-bottom: 0.4em;
+            text-align: left;
+            padding-left: 2em;
+            padding-right: 2em;
+
+            a,
+            a:active,
+            a:hover,
+            a:link,
+            a:visited {
+              text-decoration: underline;
+              color: $whiteColor;
+            }
+          }
+        }
+      }
+
+      .col-2 {
+        display: flex;
+        flex-flow: column;
+        font-size: 0.5em;
+        opacity: 0.5;
+        justify-content: flex-end;
+
+        ul {
+          padding-left: 0;
+          text-align: left;
+          margin: 0 auto;
+
+          li {
+            list-style: none;
+          }
+        }
+      }
+
+      .col-3 {
+        .sponsors {
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+
+          img {
+            width: 6em;
+            margin: 0.5em;
+          }
+        }
+      }
+    }
   }
   /* Forsíðu stílar */
   .main-content-65-35 {
@@ -215,11 +384,14 @@ header {
       @include makeGrid;
       grid-template-columns: 45% 55%;
 
+      ul {
+        padding-left: 0;
+      }
+
       li {
-        list-style: none;
-        border-bottom: 2px solid $orangeColor;
+        @include makeList;
         margin-right: 2em;
-        margin-bottom: 0.5em;
+        margin-left: 2em;
       }
     }
   }
@@ -231,8 +403,9 @@ header {
       @include makeBlock;
 
       .main-kynning-content {
-        max-width: 33.5em;
         margin: 0 auto;
+        max-width: 37.5em;
+        text-align: center;
       }
     }
 
@@ -325,49 +498,60 @@ header {
   }
 
   .main-content-lid {
-    @include makeGrid;
-    grid-template-columns: 1fr 1fr;
+    .list-teams {
+      @include makeGrid;
+      grid-template-columns: 1fr 1fr;
 
-    .team {
-      max-width: 200px;
-      @include makeBlock;
-      display: flex;
-      justify-content: center;
-      flex-flow: column;
-      padding: 0;
-
-      .logo {
-        height: 120px;
+      .team {
+        max-width: 200px;
+        @include makeBlock;
         display: flex;
         justify-content: center;
+        flex-flow: column;
+        padding: 0;
 
-        img {
-          width: 100px;
-          padding: 0.5em;
-        }
-      }
+        .logo {
+          height: 120px;
+          display: flex;
+          justify-content: center;
 
-      h3 {
-        text-align: center;
-        margin: 0 0 0.7em;
-      }
-
-      .players {
-        //background-color: red;
-        background-color: lighten($darkblueColor, 30%);
-        border-radius: 0 0 10px 10px;
-
-        ul {
-          display: inline;
-
-          li {
-            list-style: none;
-            padding-left: 0;
-            margin: 0 1em 0.5em;
-            text-align: center;
-            border-bottom: 1px solid $orangeColor;
+          img {
+            width: 100px;
+            padding: 0.5em;
           }
         }
+
+        h3 {
+          text-align: center;
+          margin: 0 0 0.7em;
+        }
+
+        .players {
+          //background-color: red;
+          background-color: lighten($darkblueColor, 30%);
+          border-radius: 0 0 10px 10px;
+
+          ul {
+            display: inline;
+
+            li {
+              list-style: none;
+              padding-left: 0;
+              margin: 0 1em 0.5em;
+              text-align: center;
+              border-bottom: 1px solid $orangeColor;
+            }
+          }
+        }
+      }
+    }
+
+    .frag-movie {
+      @include makeBlock;
+      text-align: center;
+
+      h2 {
+        text-decoration: underline;
       }
     }
   }
@@ -479,17 +663,19 @@ header {
       h1 {
         color: #cd7f32;
       }
+
       .midar {
         @include midar;
       }
 
       .kaupamida {
         @include midarlinkar;
-          a{
-              &:hover{
-                  color: #cd7f32;
-              }
+
+        a {
+          &:hover {
+            color: #cd7f32;
           }
+        }
       }
     }
 
@@ -506,11 +692,12 @@ header {
 
       .kaupamida {
         @include midarlinkar;
-          a{
-              &:hover{
-                  color: #c0c0c0;
-              }
+
+        a {
+          &:hover {
+            color: #c0c0c0;
           }
+        }
       }
     }
 
@@ -527,11 +714,12 @@ header {
 
       .kaupamida {
         @include midarlinkar;
-          a{
-              &:hover{
-                  color: #ffd700;
-              }
+
+        a {
+          &:hover {
+            color: #ffd700;
           }
+        }
       }
     }
 
@@ -543,28 +731,25 @@ header {
         padding-bottom: 2em;
       }
     }
-    .map{
-        @include makeBlock;
+
+    .map {
+      @include makeBlock;
+      background-color: $darkblueColor;
+
+      .texti {
         background-color: $darkblueColor;
-        .texti{
-            
-            background-color: $darkblueColor;
-        }
-        
-        
-      }
-      .mynd{
-          @include makeBlock;
-          background-color: $darkblueColor;
-          img{
-              width: 100%;
-            
-          }
-          
-          
-          
       }
     }
+
+    .mynd {
+      @include makeBlock;
+      background-color: $darkblueColor;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
 
   .main-content-info {
     @include makeGrid;
@@ -575,10 +760,15 @@ header {
       grid-area: logo;
       display: flex;
       justify-content: center;
+      align-items: center;
       @include makeBlock;
 
       img {
-        width: 155px;
+        width: 10em;
+        height: 10em;
+        border-radius: 24px;
+        padding: 0.1em;
+        background-color: #f1f1f1;
       }
     }
 
@@ -590,6 +780,21 @@ header {
     .Petur {
       grid-area: petur;
       @include makeBlock;
+
+      .container {
+        display: grid;
+        grid-template-columns: 35% 65%;
+
+        ul {
+          li {
+            @include makeList;
+          }
+        }
+
+        p {
+          margin-left: 3em;
+        }
+      }
     }
 
     .Robert {
@@ -674,6 +879,7 @@ header {
   transition: all 0.5s ease;
   background-color: $greyColor;
   z-index: 99;
+  opacity: 0.95;
 
   li {
     border: 0;
@@ -692,7 +898,6 @@ header {
     font-weight: bold;
     padding: 0.25em;
     color: $whiteColor;
-    
   }
 }
 
@@ -778,15 +983,24 @@ form input[type="submit"] {}
   color: rgba(204, 204, 204, .3);
   margin-bottom: -3.5em;
 }
+
+.aridandi {
+  font-size: 1em;
+  text-decoration: underline;
+  font-weight: bolder;
+  color: $orangeColor;
+}
 /*------Viðmið 37.5(600px)-----*/
 @media screen and (min-width: 37.5em) {
   .current-site h3:before {
-    content: "Stage 1";
+    //content: "Stage 1";
   }
 
   .wrapper {
     .main-content-lid {
-      grid-template-columns: 1fr 1fr 1fr;
+      .list-teams {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
     }
 
     .main-content-info {
@@ -813,12 +1027,32 @@ form input[type="submit"] {}
   }
 
   .wrapper {
+    footer {
+      .footer-content {
+        grid-template-columns: 38% 47% 15%;
+
+        .col-3 {
+          margin: 0 auto;
+
+          .sponsors {
+            display: flex;
+            flex-flow: row;
+            align-items: baseline;
+          }
+        }
+      }
+    }
+
     .main-content-65-35 {
       grid-template-columns: 65% 35%;
       grid-template-areas: "kynning right";
 
       .right {
         grid-template-columns: 1fr;
+        //margin-bottom: 13em;
+        //.col-2 {
+        //  padding-bottom: 15em;
+        //}
       }
     }
 
@@ -844,53 +1078,53 @@ form input[type="submit"] {}
       @include makeBlock;
       grid-template-columns: 50% 50%;
       grid-template-areas: "bronze silver""gold svid";
-        .bronze,
-        .gold{
-            margin-right: 1em;
-            
+
+      .bronze,
+      .gold {
+        margin-right: 1em;
+      }
+
+      .gold {
+        a {
+          &:hover {
+            color: #ffd700;
+          }
         }
-        .gold{
-            a{
-                &:hover{
-                    color: #ffd700;
-                }
-            }
+      }
+
+      .silver {
+        a {
+          &:hover {
+            color: #c0c0c0;
+          }
         }
-        .silver{
-            a{
-                &:hover{
-                    color:  #c0c0c0;
-                }
-            }
+      }
+
+      .bronze {
+        a {
+          &:hover {
+            color: #cd7f32;
+          }
         }
-        .bronze{
-            a{
-            &:hover{
-                    color: #cd7f32;
-                }
-            }
-            
+      }
+
+      .silver,
+      .svid {
+        margin-left: 1em;
+      }
+
+      .svid {
+        img {
+          position: relative;
+          top: 4em;
+          width: 100%;
+          justify-content: center;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
         }
-        .silver,
-        .svid{
-            margin-left: 1em;
-            
-        }
-        .svid{
-            img{
-                position: relative;
-                top:4em;
-                width: 100%;
-                justify-content: center;
-                display: block;
-                margin-left: auto;
-                margin-right: auto; 
-            }
-        }
-          
-       
+      }
     }
-    
 
     form {
       width: 100%;
@@ -906,9 +1140,11 @@ form input[type="submit"] {}
   }
 
   .main-content-lid {
-    .team {
-      .players {
-        /* Stíla þetta seinna */
+    .list-teams {
+      .team {
+        .players {
+          /* Stíla þetta seinna */
+        }
       }
     }
   }
@@ -938,7 +1174,7 @@ form input[type="submit"] {}
   }
 
   .current-site h3:before {
-    content: "Stage 2";
+    //content: "Stage 2";
   }
 }
 /*------Viðmið 60(960px)------*/
@@ -949,11 +1185,13 @@ form input[type="submit"] {}
 
   .wrapper {
     .main-content-lid {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      .list-teams {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
     }
   }
 
   .current-site h3:before {
-    content: "Stage 3";
+    //content: "Stage 3";
   }
 }
