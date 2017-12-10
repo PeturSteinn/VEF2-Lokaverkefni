@@ -17,5 +17,8 @@ ___
 ### 04.12.2017
 ##### Skrifuðum inn á síðuna hvenar þetta var og um viðburðinn
 ___
-https://petursteinn.github.io/VEF2-Lokaverkefni/
+[Síðan](https://petursteinn.github.io/VEF2-Lokaverkefni/")
+___
+######  © Pétur Steinn Guðmundsson & Róbert Ingi Hálfdanarson
+___
 
